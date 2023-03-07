@@ -29,10 +29,10 @@ public class Pizza {
     @Column(name = "PIZZA_PRICE", columnDefinition = " Decimal(10,2) default '0.00' ", nullable = false)
     private BigDecimal pizzaPrice;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
    // @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "cafe_id", nullable = false)
-    @JsonIgnore
+//    @JsonIgnore
     @ToString.Exclude
     private Cafe cafe;
 
